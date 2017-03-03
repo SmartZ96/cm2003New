@@ -1,0 +1,82 @@
+/**
+* @Author: John Isaacs <john>
+* @Date:   09-Feb-172017
+* @Filename: style.css
+* @Last modified by:   john
+* @Last modified time: 09-Feb-172017
+*/
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+body {
+  line-height: 1;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  color: #666;
+ }
+
+ol, ul { list-style: none; }
+table { border-collapse: collapse; border-spacing: 0; }
+
+/*--- header section - put whatever you want here ---*/
+header {
+	height: 100px;
+	padding: 0 15px;
+  background-color: aliceblue;
+}
+
+/*--- footer section - put whatever you want here ---*/
+footer {
+  clear: both;
+	padding: 0 15px;
+  background-color: lavender;
+}
+
+section {
+    font: 1.2em Verdana, Arial, Helvetica, sans-serif;
+    border:1px solid;
+    background-color: cornsilk;
+}
+nav{
+  width:960px;
+  height:30px;
+}
+
+nav ul {
+    border:1px solid #ccc;
+    border-width:1px 0;
+    list-style:none;
+    margin:10;
+    padding:0;
+    text-align:center;
+}
+nav li {
+  display:inline-block;
+  padding-left:20px;
+  padding-right:20px;
+}
+/*--- page wrap wraps our whole site ---*/
+#pagewrap {
+	padding: 5px;
+	width: 960px;
+	margin: 20px auto;
+}
+
+/*--- content section - put whatever you want here ---*/
+#content {
+	width: 290px;
+	float: left;
+	padding: 5px 15px;
+}
+/*--- middle content section - put whatever you want here ---*/
+#middle {
+	width: 294px; /* Account for margins + border values */
+	float: left;
+	padding: 5px 15px;
+	margin: 0px 5px 5px 5px;
+}
+/*--- right section - put whatever you want here ---*/
+#sidebar {
+	width: 270px;
+	padding: 5px 15px;
+	float: left;
+}
