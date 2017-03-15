@@ -1,0 +1,157 @@
+<!doctype css>
+
+#pageheader{
+height:200px;
+width:100%;
+background_color:#FCF7F7;
+}
+#header{
+	height:100px;
+	width:100%;
+background-color:#A9A9A9;
+opacity: 0.92;
+position:absolute;
+margin-top:0px;}
+
+#navi{
+	height:90px;
+	width:90px;
+background-color:#A9A9A9;
+margin-top:10px;
+margin-left:10px;
+position:absolute;
+}
+#logo{
+	height:100px;
+	width:180px;
+background-color:#A9A9A9;
+margin-left:200px;
+position:absolute;
+}
+#searchbar{
+	height:40px;
+	width:600px;
+	background-color:#A9A9A9;
+	margin-left:35%;
+	margin-top:32.5px;
+	position:absolute;
+}
+
+	p{
+		font-family:"Trebuchet MS";
+	font-size:17px;}
+#maincontent{
+height:850px;
+width:100%;
+background-color:#FCF7F7;
+background-image:url(Endimages/abstract3.0.jpg);
+}
+
+
+
+#footer{
+height:100px;
+width:100%;
+background-color:#FFFFFF;
+position:absolute;
+}
+#resident{
+	height:90px;
+	width:90px;
+	margin-left:1%;
+	margin-top:5px;
+	background-color:#FFFFFF;
+position:absolute;}
+
+
+	#tokyotext{
+	height:80px;
+	width:180px;
+	margin-left:8%;
+	margin-top:10px;
+	background-color:#FFFFFF;
+position:absolute;}
+
+
+
+		#repeat{
+	height:50px;
+	width:50px;
+	margin-left:20%;
+	margin-top:25px;
+	background-color:#FFFFFF;
+position:absolute;}
+
+#repeat:hover{
+	transform:scale(1.1);}
+	#skip{
+	height:60px;
+	width:60px;
+	margin-left:26%;
+	margin-top:20px;
+	background-color:#FFFFFF;
+position:absolute;}
+
+#skip:hover{
+	transform:scale(1.1);}
+
+	#play{
+	height:60px;
+	width:60px;
+	background-color:#FFFFFF;
+	margin-left:33%;
+	margin-top:20px;
+position:absolute;}
+
+#play:hover{
+	transform:scale(1.1);}
+
+	#skipforward{
+	height:60px;
+	width:60px;
+	background-color:#FFFFFF;
+	margin-left:40%;
+	margin-top:20px;
+position:absolute;}
+
+
+#skipforward:hover{
+	transform:scale(1.1);}
+
+	#shuffle{
+	height:50px;
+	width:80px;
+	background-color:#FFFFFF;
+		margin-left:47%;
+	margin-top:25px;
+position:absolute;}
+
+#shuffle:hover{
+	transform:scale(1.1);}
+
+	#progress{
+	height:30px;
+	width:400px;
+	background-color:#FFFFFF;
+		margin-left:57%;
+	margin-top:35px;
+position:absolute;}
+
+
+	#speaker{
+	height:50px;
+	width:50px;
+	background-color:#FFFFFF;
+	margin-left:83.5%;
+	margin-top:25px;
+position:absolute;}
+#speaker:hover{
+	transform:scale(1.1);}
+
+	#volume{
+	height:75px;
+	width:150px;
+	background-color:#FFFFFF;
+	margin-left:89%;
+	margin-top:12.5px;
+position:absolute;}
