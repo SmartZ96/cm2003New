@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>Google+ Sign-in button demo: Javascript flow</title>
+
+<meta name="google-signin-clientid" content="101127771516-fj0fibn18pckkgvdoqu8j6e0j6e0j61rm60.apps.googleusercontent.com" />
+<meta name="google-signin-scope" content="http://www.googleapis.com/auth/plus.login" />
+<meta name="google-signin-cookiepolicy" content="single_host_origin" />
+<script src="http://apis.google.com/js/client:platform.js" async defer></script>
+<script src="googlelogin.js"></script>
+</head>
+<body>
+  <div id="result">
+    <button id="signinButton">Sign in with Google</button>
+    </div>
+
+<script>
+    function go() {
+      console.log('sign-in state: ');
+      //additional params including the callback, the rest of the params will
+      // come from the page-level configuration.
+      var additionalParams = {
+        'callback': SignCallback
+      };
+
+      // Attach a click listener to a button to trigger the flow.
+      var signinButton = document.getElementById('signinButton');
+      signinButton.addEventListener('click', function() {
+        console.log('Sign-in slate: ');
+        gapi.auth.signIn(additionalParams); //will use page level configuration
+      });
+    }else{
+      // Update the app to reflect a signed out user
+      //Possible error values:
+      // "user_signed_out" - User is signed-out
+      //"access_denied" - User deneid access to your app
+      // "immediate_failed" - Could not automatically log in the user
+      console.log('Sign-in state: ' + authResult['error']);
+    }
+  }
+
+
+</script>
+
+  </body>
+  </html>
