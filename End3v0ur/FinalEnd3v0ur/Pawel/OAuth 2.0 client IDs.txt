@@ -1,0 +1,7 @@
+clienID
+
+601398957092-t4kk0i5o01m9jd3nuj0thi68copdgi85.apps.googleusercontent.com
+
+Client Secret
+
+jgykboWmA1z6L6nzBsg_NiQS
