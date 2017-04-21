@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Contact Us</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
+	</script>
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+<script type="text/javascript">
+
+	function validate(){
+		var x=document.forms["form"]["firstname"].value
+			if(x==null || x==""){
+				alert("Please enter your first name.");
+				return false
+			}
+			
+		var y=document.forms["form"]["surname"].value
+			if(y==null || y==""){
+				alert("Please enter your surname.");
+				return false
+			}
+			
+			var z=document.forms["form"]["email"].value
+			if(z==null || z==""){
+				alert("Please enter your email.");
+				return false
+			}
+			
+			var a=document.forms["form"]["phonenumber"].value
+			if(a==null || a==""){
+				alert("Please enter your phone number.");
+				return false
+			}
+	}
+			</script>
+
+	
+</head>
+
+<body>
+<div id="container">
+
+	<div id="nav">
+
+	<ul>
+		<a href="login.html"><li>Log in</li></a>
+		<a href="register.html"><li>Register</li></a>
+     </ul>
+     	</div>
+     
+	<div id="header">
+    <a href="index.html"><img src="img/logo.png" alt="" class="logo"/></a>
+	<nav>
+
+	<ul>
+		<a href="index.html"><li>Home</li></a>
+		<a href="books.html"><li>Books</li></a>
+		<a href="login.html"><li>Blog</li></a>
+		<a href="shop.html"><li>Shop</li></a>
+		<a href=""><li>Contact</li></a>
+	</ul>
+	
+	<div class="handle"><img src="img/nav-icon.png" alt="" class="nav">
+	
+	</nav>
+    </div>
+    
+`	<script>
+	$('.handle').on('click', function(){
+	$('nav ul').toggleClass('showing');
+	})
+	</script>
+    
+    	<div class="image">
+		<img src="img/bucket.jpg" alt="" height="450" width="100%"/>
+	</div>
+    
+
+    <div id="contact">
+<h1>If You have any questions please enter your details here.</h1>
+<form name="form">
+	<fieldset>
+    First Name*<input type="text" size="25" name="firstname"/>
+    <br/>
+    Surname*<input type="text" size="25" name="surname"/>
+    <br/>
+	Email*<input type="text" size="25" name="email"/>
+    <br/>
+    Phone Number*<input type="integer" size="25" name="phonenumber"/>
+    <br/>
+            Message<textarea placeholder="Enter your comments here required"></textarea>
+             <br/>
+             <img src="img/characters.jpg" alt="" class="characters" />
+              <input type="submit" value="submit" onclick="validate()"/>
+              <input type="reset" value="reset"/>
+       </fieldset>
+       </form>
+       
+       
+       	<div class="image">
+		<img src="img/dinoworld.jpg" alt="" height="450" width="100%"/>
+	</div>
+ 
+       
+	      <div id="footer">
+            <br>
+            <br>
+            <p>© Deadlefizz Dinosaur 2016</p>
+            <a href="https://www.facebook.com/"><img src="img/facebook-4-256.png" alt="" height="30" width="30"/></a>
+           <a href="https://twitter.com/?lang=en-gb"><img src="img/twitter-4-256 (1).png" alt="" height="30" width="30"/></a>			            
+    </div>
+
+    
+</div>
+</body>
+</html>

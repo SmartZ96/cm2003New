@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Log In</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
+	</script>
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+
+<body>
+<div id="container">
+
+	<div id="nav">
+
+	<ul>
+		<a href=""><li>Log in</li></a>
+		<a href="register.html"><li>Register</li></a>
+     </ul>
+     	</div>
+     
+	<div id="header">
+    <a href="index.html"><img src="img/logo.png" alt="" class="logo"/></a>
+	<nav>
+
+	<ul>
+		<a href="index.html"><li>Home</li></a>
+		<a href="books.html"><li>Books</li></a>
+		<a href=""><li>Blog</li></a>
+		<a href="shop.html"><li>Shop</li></a>
+		<a href="contact.html"><li>Contact</li></a>
+	</ul>
+	
+	<div class="handle"><img src="img/nav-icon.png" alt="" class="nav">
+	
+	</nav>
+    </div>
+    
+`	<script>
+	$('.handle').on('click', function(){
+	$('nav ul').toggleClass('showing');
+	})
+	</script>
+    
+    <div id="background">
+    <h1>Log into your account here (You can't access the blog unless you sign in!)</h1><br><br>
+    <div id="log">
+    
+<form name="form">
+	<fieldset>
+    Username*<input type="text" size="25" name="firstname"/>
+    <br/>
+    <br/>
+    Password*<input type="text" size="25" name="surname"/>
+    <br/>
+    <a href="blog.html"><img src="img/login.png" alt="" height="100" width="100"/></a>
+
+
+      </fieldset>
+       </form>
+       <h1>Not a member yet? sign up <a href="register">here</a></h1>
+       </div>
+       
+    </div>
+    
+              <div id="footer">
+            <br>
+            <br>
+            <p>© Deadlefizz Dinosaur 2016</p>
+            <a href="https://www.facebook.com/"><img src="img/facebook-4-256.png" alt="" height="30" width="30"/></a>
+            <a href="https://twitter.com/?lang=en-gb"><img src="img/twitter-4-256 (1).png" alt="" height="30" width="30"/></a>
+            
+            </div>
+
+</div>
+</body>
+</html>

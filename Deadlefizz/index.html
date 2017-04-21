@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>DeadlefFizz Dinosuar</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
+	</script>
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+<script type="text/javascript">
+
+	var slideimages = new Array() // create new array to preload images
+slideimages[0] = new Image() // create new instance of image object
+slideimages[0].src = "img/Street.jpg" // set image src property to image path, preloading image in the process
+slideimages[1] = new Image()
+slideimages[1].src = "img/splash.jpg"
+slideimages[2] = new Image()
+slideimages[2].src = "img/dinoworld.jpg"
+slideimages[3] = new Image()
+slideimages[3].src = "img/dinos.jpg"
+
+</script>
+
+
+</head>
+
+<body>
+<div id="container">
+
+	<div id="nav">
+
+	<ul>
+		<a href="login.html"><li>Log in</li></a>
+		<a href="register.html"><li>Register</li></a>
+     </ul>
+     	</div>
+     
+	<div id="header">
+    <img src="img/logo.png" alt="" class="logo"/>
+	<nav>
+
+	<ul>
+		<a href=""><li>Home</li></a>
+		<a href="books.html"><li>Books</li></a>
+		<a href="login.html"><li>Blog</li></a>
+		<a href="shop.html"><li>Shop</li></a>
+		<a href="contact.html"><li>Contact</li></a>
+	</ul>
+	
+	<div class="handle"><img src="img/nav-icon.png" alt="" class="nav">
+	
+	</nav>
+    </div>
+    
+`	<script>
+	$('.handle').on('click', function(){
+	$('nav ul').toggleClass('showing');
+	})
+	</script>
+
+	<div class="image">
+		<img src="img/Street.jpg" alt="" height="450" width="100%" id="image"/>
+	</div>
+    
+    <div id="text">
+    <h1>WELCOME</h1>
+    <p>Welcome to the official website of Deadlefizz Dinosaur, a series of childrens books where children take the joy of reading about Deadlefizz and his dinosaur buddies on their fun silly adventures.</p> 
+    </div>
+    
+    <div class="image">
+		<img src="img/dive.jpg" alt="" height="450" width="100%"/>
+	</div>
+    
+     <script type="text/javascript">
+
+//variable that will increment through the images
+var step=0
+
+function slideit(){
+ //if browser does not support the image object, exit.
+ if (!document.images)
+  return
+ document.getElementById('image').src = slideimages[step].src
+ if (step<3)
+  step++
+ else
+  step=0
+ //call function "slideit()" every 2 seconds
+ setTimeout("slideit()",2500)
+}
+
+slideit()
+</script>
+    
+    <div id="body">
+
+			<div id="left">
+				<h2>THE BLOG</h2>
+                
+              
+              <p>want to join the fan club and visit our blog just sign up or if your new register here.<br/>
+                </p>
+                <br>
+                
+                
+                <a href="login.html"><img src="img/button.png" alt="" class="button"/></a>
+                
+			</div>
+
+			<div id="center">
+           
+				<h2>SHOPPING</h2>
+                
+                
+                
+              <p>want to purchase our wacky and awesome books? place your orders by going onto our shop page here.<br/>
+               </p>
+               <br>
+               
+               
+               
+                
+                <a href="shop.html"><img src="img/button.png" alt="" class="button"/></a>
+               
+			</div>
+
+			<div id="right">
+				<h2>CONTACT US</h2>
+                
+                
+              <p>Want to get in contact with the author or if you have any queries regarding Deadlefizz dinosaur click here.<br/>
+                </p>
+                
+                <a href="contact.html"><img src="img/button.png" alt="" class="button"/></a>
+                <br>
+                
+			</div>
+            </div>
+            
+            <div id="footer">
+            <br>
+            <br>
+            <p>© Deadlefizz Dinosaur 2016</p>
+            <a href="https://www.facebook.com/"><img src="img/facebook-4-256.png" alt="" height="30" width="30"/></a>
+            <a href="https://twitter.com/?lang=en-gb"><img src="img/twitter-4-256 (1).png" alt="" height="30" width="30"/></a>
+            
+            </div>
+    
+
+
+</div>
+</body>
+</html>
