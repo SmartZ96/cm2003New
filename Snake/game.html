@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Play Our Demo!</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+   
+<link rel="stylesheet" type="text/css" href="css/snake.css"/>
+<link rel="shortcut icon" href="snake-text.ico"/>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
+</script>
+
+<script type="text/javascript">
+window.addEventListener("keydown", function(e) {
+    // space and arrow keys
+    if([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+        e.preventDefault();
+    }
+}, false);
+</script>
+
+<script>
+$(document).ready(function(){
+    $("#hide").click(function(){
+        $("#snake").hide();
+    });
+    $("#show").click(function(){
+        $("#snake").show();
+    });
+});
+</script>
+
+<script>
+$(function() {
+    var pull        = $('#pull');
+        menu        = $('nav ul');
+        menuHeight  = menu.height();
+ 
+    $(pull).on('click', function(e) {
+        e.preventDefault();
+        menu.slideToggle();
+    });
+});
+
+$(window).resize(function(){
+    var w = $(window).width();
+    if(w > 320 && menu.is(':hidden')) {
+        menu.removeAttr('style');
+    }
+});
+</script>
+    
+
+
+
+</head>
+
+<body>
+<div id="container">
+	<div id="header">
+	<a href="index.html"><img src="img/snake3.png" height="130" width="130" alt="" class="logo"/></a>
+ </div>
+ 
+ <div id="nav">
+ 	
+    <nav class="clearfix">
+    <ul class="clearfix">
+			<li><a href="index.html">Home</a></li>
+			<li><a href="about.html">About</a></li>
+			<li><a href="#">Game</a></li>
+			<li><a href="faqs.html">FAQs</a></li>
+			<li><a href="contact.html">Contact</a></li>
+		</ul>
+        <a href="countdown.html" id="pull">Menu</a>
+       </nav>
+ 
+ 
+ </div>
+ 
+<div id="game">
+<canvas id="canvas" width="450" height="450"></canvas>
+
+			<script type="text/javascript">
+			
+			//Create a function that will ensure your code loads after the webpage
+			$(document).ready(function(){
+
+				
+		
+	
+				// * Defining the game canvas *
+					//Create a variable named "canvas" and asign it the value of the following jQuery - Use jQuery to select the id of "canvas"
+					var canvas=$("#canvas")[0];
+					//Create a variable called "cancon" and assign it the following - "canvas.getContext("2d")", this will ensure the game knows it is in 2d
+					var cancon=canvas.getContext("2d");
+					
+					//Create a variable called "h" and asign it the following jQuery - Use jQuery to select the id of "canvas" and asign it a height method()
+					
+					var h=	$("#canvas").height();
+					
+					//Create a variable called "w" and asign it the following jQuery - Use jQuery to select the id of "canvas" and asign it a width method()
+					
+					var w= $("#canvas").width();
+			
+
+				// * Defining the basic elements of the game *
+					//*Snake Width* Create a variable called "cellW" and asign it an integer of 10
+					
+					var cellW=10;
+					//*Snake direction* Create an empty variable called "d"
+					var d;
+					
+					//*Snakes food* Create an empty variable called "food"
+					var food;
+					
+					//*The Score* Create an empty variable called "score"
+					var score;
+	
+				// * Creating the snake * an array is used to contain each individual cell
+					//create an empty varaible and call it "snake_array"
+					var snake_array;
+
+				
+				function init(){
+					//Earlier we defined the variable "d", now asign it the value "right"
+					d= "right";
+					
+					create_snake();// * This is a function that is created later *
+					create_food(); // * This is a function that is created later *	
+					//Earlier we defined the variable "score", now asign it the value "0"	
+					
+					score= 0;
+									
+					if(typeof game_loop != "undefined") clearInterval(game_loop);
+					game_loop = setInterval(paint, 40); //* This Move the snake now using a timer which will trigger the paint function Speed 40ms
+					}
+					init();
+	
+					function create_snake(){
+						//Create a variable called "length" and asign it an integer of 8
+						
+						var length=8;
+						
+						snake_array = []; // * Empty array that was created earlier to start with *
+						for(var i = length-1; i>=0; i--){						
+						snake_array.push({x: i, y:0});// * This will create a horizontal snake starting from the top left *
+					}
+				}
+	
+	
+				// * Creating the food *
+				function create_food(){
+					food = {
+						x: Math.round(Math.random()*(w-cellW)/cellW), 
+						y: Math.round(Math.random()*(h-cellW)/cellW), 
+					};
+					// * This will create a cell with both x/y axis between 0-44 *
+					// * Because there are 45(450/10) positions accross the rows and columns *
+				}
+	
+	
+				// * Styling the Snake *
+				function paint(){
+					cancon.fillStyle = '#378d12'; //Asign an appropriate hex backround colour to your canvas
+				
+					cancon.fillRect(0, 0, w, h);
+					cancon.strokeStyle = '#000'; //Asign an appropriate hex edge colour to your canvas - remove if not needed
+					
+					cancon.strokeRect(0, 0, w, h);	
+					var nx = snake_array[0].x; // * Random snake head position on x axis *
+					var ny = snake_array[0].y; // * Random snake head position on y axis *
+					// * Direction based movement *
+					//Create a SIMPLE if statement - if "d" is eqaul to "right" then increment nx increases by one
+					if (d== "right") nx++; 
+					//Else if "d" is  eqaul to "left" nx decreases by one	
+					else if (d== "left") nx-- ;
+					//Else if "d" is  eqaul to "up" ny decreases by one			
+					else if (d== "up") ny-- ;
+					//Else if "d" is  eqaul to "down" ny increases by one	
+					else if (d== "down")ny++ ; 
+					
+						//* Game Over clauses *
+						// * The following line will restart the game if the snake hits the wall including body collision *
+					if(nx == -1 || nx == w/cellW || ny == -1 || ny == h/cellW || check_collision(nx, ny, snake_array)){
+						// * Restart game *
+						init();
+						return;
+					}
+		
+					// * Making the snake eat the food *
+					// * If the new head position matches with that of the food * 
+					// * Create a new head instead of moving the tail * 
+					if(nx == food.x && ny == food.y){
+						var tail = {x: nx, y: ny};
+						score++;
+						// * Create new food * 
+						create_food();
+					}
+					else
+					{
+						var tail = snake_array.pop(); // * pops out the last cell * 
+						tail.x = nx; tail.y = ny;
+					}
+					// * The snake can now eat the food * 	
+					snake_array.unshift(tail); // * puts back the tail as the first cell * 
+		
+					for(var i = 0; i < snake_array.length; i++){ // * Snake length increases by one * 
+						var c = snake_array[i];
+						// * 10px wide cells * 
+						paint_cell(c.x, c.y);
+					}
+		
+					// * Paint the food * 
+					paint_cell(food.x, food.y);
+					// * Paint the score * 
+					var score_text = "Score: " + score;
+					cancon.fillText(score_text, 400, h-430);
+				}
+				
+	
+					//Paint cells
+				function paint_cell(x, y){
+					cancon.fillStyle='#000'; //Asign an appropriate hex backround colour to your snake body
+					cancon.fillRect(x*cellW, y*cellW, cellW, cellW);
+					cancon.strokeStyle='#000'; //Asign an appropriate hex colour to your snake edge
+					cancon.strokeRect(x*cellW, y*cellW, cellW, cellW);
+				}
+	
+	
+				function check_collision(x, y, array)
+				{
+					// * This function will check if the provided x/y coordinates exist in an array of cells or not * 
+					for(var i = 0; i < array.length; i++){
+						if(array[i].x == x && array[i].y == y)
+						 return true;
+					}
+					return false;
+				}
+	
+	
+				// * Addding the keyboard controls * 
+				$(document).keydown(function(e){
+					var key = e.which;
+					// * Adding another clause to prevent reverse * 
+					if(key == "37" && d != "right") d = "left";
+					else if(key == "38" && d != "down") d = "up";
+					else if(key == "39" && d != "left") d = "right"; // * Key numbers represent keyboard key numbers
+					else if(key == "40" && d != "up") d = "down";
+					// * The snake is now keyboard controllable * 
+				})
+				
+			});	
+
+		
+</script>
+</div>
+
+<div id="instructions">
+<h3>How to play</h3>
+<p>how to play is by controling a long and thin creature resembling a snake which roams freely around on a bordered plane, picking up fruit while avoiding hitting its tail or the walls that surround the playing area. Every time the snake eats a piece of fruit, it will grows longer, making the game increasingly difficult and competitive. The user controls the direction of the snake's head (up, down, left, or right), and the snake's body will follow. Navigate your snake with the navigational directional arrow buttons on your keyboard to control your snake. Have fun!</p>
+
+<img src="img/snake2.png" height="150" width="250" alt="" id="snake"/>
+
+<p>If you click on the "Hide" button, I will disappear.</p>
+
+<button id="hide">Hide</button>
+<button id="show">Show</button>
+
+</div>
+
+   <div id="footer">
+   <p>© Sean Smart</p>
+   <a href="https://twitter.com/?lang=en-gb"><img src="img/twitter.png" height="50" width="50" alt="" class="twitter"  /></a>
+   <a href="https://en-gb.facebook.com/"><img src="img/facebook.png" height="50" width="50" alt="" class="facebook" /></a>
+   
+   </div>
+  </div>
+
+</body>
+</html>

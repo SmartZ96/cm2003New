@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>FAQs</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
+</script>
+   
+<link rel="stylesheet" type="text/css" href="css/snake.css"/>
+<link rel="shortcut icon" href="snake-text.ico"/>
+
+<script>
+$(document).ready(function(){
+    $("#hide").click(function(){
+        $("#snake").hide();
+    });
+    $("#show").click(function(){
+        $("#snake").show();
+    });
+});
+</script>
+
+<script>
+$(function() {
+    var pull        = $('#pull');
+        menu        = $('nav ul');
+        menuHeight  = menu.height();
+ 
+    $(pull).on('click', function(e) {
+        e.preventDefault();
+        menu.slideToggle();
+    });
+});
+
+$(window).resize(function(){
+    var w = $(window).width();
+    if(w > 320 && menu.is(':hidden')) {
+        menu.removeAttr('style');
+    }
+});
+</script>
+
+</head>
+
+<body>
+<div id="container">
+	<div id="header">
+	<a href="index.html"><img src="img/snake3.png" height="130" width="130" alt="" class="logo"/></a>
+    
+    </div>
+ 
+ 
+ <div id="nav">
+ 	
+        <nav class="clearfix">
+    <ul class="clearfix">
+    
+			<li><a href="index.html">Home</a></li>
+			<li><a href="about.html">About</a></li>
+			<li><a href="game.html">Game</a></li>
+			<li><a href="#">FAQs</a></li>
+			<li><a href="contact.html">Contact</a></li>
+		</ul>
+        
+        <a href="countdown.html" id="pull">Menu</a>
+       </nav>
+ 
+ 
+ </div>
+ 
+ <div id="contact">
+
+ <h3>Controls?</h3>
+ <p>All you are relying on for this game are the directional buttons on the demo by clicking top, bottom, left and right. which allows you to control your snake nice and smoothly throughout the demo.</p>
+ <br/>
+ <h3>Fruit?</h3>
+ <p>The fruit will be placed randomly around the website for your snake to chase after once your snake gets larger it will become much more difficult to reach to fruit the further you progress.</p>
+ <br/>
+  <h3>Time?</h3>
+ <p>There is no time limit throughout the whole game demo the only time when the game  is over is when your snake touches its body and shows you your score at the end of the demo.</p>
+ <br/>
+  <h3>Availability?</h3>
+ <p>The snake game will be available on Apple and Android devices.</p>
+ <img src="img/snake2.png" height="150" width="250" alt="" id="snake"/>
+ 
+ <p>If you click on the "Hide" button, I will disappear.</p>
+
+<button id="hide">Hide</button>
+<button id="show">Show</button>
+
+ </div>
+
+
+ 
+ <div id="footer">
+    <p>© Sean Smart</p>
+   <a href="https://twitter.com/?lang=en-gb"><img src="img/twitter.png" height="50" width="50" alt="" class="twitter" /></a>
+   <a href="https://en-gb.facebook.com/"><img src="img/facebook.png" height="50" width="50" alt=""  class="facebook" /></a>
+ </div>
+ </div>
+</body>
+</html>

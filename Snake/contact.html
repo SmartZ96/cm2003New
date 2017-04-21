@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Contact Us</title>
+
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+    <link rel="shortcut icon" href="snake-text.ico"/>
+   
+<link rel="stylesheet" type="text/css" href="css/snake.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
+</script>
+
+
+    
+    <script type="text/javascript">
+
+	function validate(){
+		var x=document.forms["form"]["firstname"].value
+			if(x==null || x==""){
+				alert("Please enter your first name.");
+				return false
+			}
+			
+		var y=document.forms["form"]["surname"].value
+			if(y==null || y==""){
+				alert("Please enter your surname.");
+				return false
+			}
+			
+			var z=document.forms["form"]["email"].value
+			if(z==null || z==""){
+				alert("Please enter your email.");
+				return false
+			}
+			
+			var a=document.forms["form"]["number"].value
+			if(a==null || a==""){
+				alert("Please enter your phone number.");
+				return false
+			}
+	}
+			</script>
+            
+            <script>
+$(document).ready(function(){
+    $("#hide").click(function(){
+        $("#snake").hide();
+    });
+    $("#show").click(function(){
+        $("#snake").show();
+    });
+});
+</script>
+
+<script>
+$(function() {
+    var pull        = $('#pull');
+        menu        = $('nav ul');
+        menuHeight  = menu.height();
+ 
+    $(pull).on('click', function(e) {
+        e.preventDefault();
+        menu.slideToggle();
+    });
+});
+
+$(window).resize(function(){
+    var w = $(window).width();
+    if(w > 320 && menu.is(':hidden')) {
+        menu.removeAttr('style');
+    }
+});
+</script>
+
+
+
+</head>
+
+<body>
+<div id="container">
+	<div id="header">
+	<a href="index.html"><img src="img/snake3.png" height="130" width="130" alt="" class="logo"/></a>
+ </div>
+ 
+ <div id="nav">
+ 
+   <nav class="clearfix">
+    <ul class="clearfix">
+    
+			<li><a href="index.html">Home</a></li>
+			<li><a href="about.html">About</a></li>
+			<li><a href="game.html">Game</a></li>
+			<li><a href="faqs.html">FAQs</a></li>
+			<li><a href="">Contact</a></li>
+		</ul>
+        
+    <a href="countdown.html" id="pull">Menu</a>
+       </nav>
+
+ 
+ </div>
+ 
+<div id="contact">
+<h3>If You have any questions please enter your details here.</h3>
+<center>
+<form name="form">
+	<fieldset>
+    <table>																																			
+
+    <tr><td>name*</td><td><input type="text" size="15" name="firstname"/></td></tr>
+   
+    <tr><td>surname*</td><td><input type="text" size="15" name="surname"/></td></tr>
+ 
+	<tr><td>email*</td><td><input type="text" size="20" name="email"/></td></tr>
+   
+    <tr><td>phone number*</td><td><input type="text" size="15" name="number"/></td></tr>
+    
+    <tr><td>Message</td><td><textarea placeholder>Message</textarea></td></tr>
+    
+        <tr><td><input type="submit" value="submit" onclick="validate()"/></td><td><input type="reset" value="reset"/>      
+</td></tr>
+
+    </table>
+    </fieldset>
+    </form>
+   </center>
+   <br/>
+    
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2164.397911697633!2d-2.1020470000000246!3d57.147354999999976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48840e23345b0d33%3A0x305597876dcfa693!2sBelmont+Filmhouse!5e0!3m2!1sen!2suk!4v1425036717581" width="65%" height="300" frameborder="0" style="border:0"></iframe>
+     
+              <div align="center"><img src="img/snake2.png" height="150" width="250" alt="" id="snake"/></div>
+              
+              <p>If you click on the "Hide" button, I will disappear.</p>
+
+<button id="hide">Hide</button>
+<button id="show">Show</button>
+
+ </div>
+ 
+    <div id="footer">
+   <p>© Sean Smart</p>
+   <a href="https://twitter.com/?lang=en-gb"><img src="img/twitter.png" height="50" width="50" alt="" class="twitter" /></a>
+   <a href="https://en-gb.facebook.com/"><img src="img/facebook.png" height="50" width="50" alt="" class="facebook" /></a>
+   
+   </div>
+   </div>
+
+
+</body>
+</html>

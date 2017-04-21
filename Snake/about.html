@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>About Us</title>
+<link rel="stylesheet" type="text/css" href="css/snake.css"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="shortcut icon" href="snake-text.ico"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
+</script>
+
+
+
+<script type="text/javascript">
+
+	var slideimages = new Array() // create new array to preload images
+slideimages[0] = new Image() // create new instance of image object
+slideimages[0].src = "img/up.png" // set image src property to image path, preloading image in the process
+slideimages[1] = new Image()
+slideimages[1].src = "img/right.png"
+slideimages[2] = new Image()
+slideimages[2].src = "img/down.png"
+slideimages[3] = new Image()
+slideimages[3].src = "img/gotya.png"
+
+</script>
+
+
+<script>
+$(document).ready(function(){
+    $("#hide").click(function(){
+        $("#snake").hide();
+    });
+    $("#show").click(function(){
+        $("#snake").show();
+    });
+});
+</script>
+
+<script>
+$(function() {
+    var pull        = $('#pull');
+        menu        = $('nav ul');
+        menuHeight  = menu.height();
+ 
+    $(pull).on('click', function(e) {
+        e.preventDefault();
+        menu.slideToggle();
+    });
+});
+
+$(window).resize(function(){
+    var w = $(window).width();
+    if(w > 320 && menu.is(':hidden')) {
+        menu.removeAttr('style');
+    }
+});
+</script>
+
+
+</head>
+
+<body>
+	
+	<div id="container">
+	<div id="header">
+	<a href="index.html"><img src="img/snake3.png" height="130" width="130" alt="" class="logo"/></a>
+
+ </div>
+ 
+ <div id="nav">
+ 
+  <nav class="clearfix">
+    <ul class="clearfix">
+			<li><a href="index.html">Home</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="game.html">Game</a></li>
+			<li><a href="faqs.html">FAQs</a></li>
+			<li><a href="contact.html">Contact</a></li>
+		</ul>
+        <a href="countdown.html" id="pull">Menu</a>
+       </nav>
+ 
+ 
+ </div>
+ 
+<center>
+ <img src="img/up.png" id="slide" width="450" height="450" alt="" class="slide" />
+ 
+ <script type="text/javascript">
+
+//variable that will increment through the images
+var step=0
+
+function slideit(){
+ //if browser does not support the image object, exit.
+ if (!document.images)
+  return
+ document.getElementById('slide').src = slideimages[step].src
+ if (step<3)
+  step++
+ else
+  step=0
+ //call function "slideit()" every 2 seconds
+ setTimeout("slideit()",2500)
+}
+
+slideit()
+</script>
+</center>
+
+
+
+
+	<div id="text">
+    <h3>What is Snake?</h3>
+    <p>Snake is a video game which has been released back in the 70s in arcades and has became a classic and much loved video game. This game is most loved on the old Nokia mobile phones.</p> 
+
+<p>how to play is by controling a long and thin creature resembling a snake which roams freely around on a bordered plane, picking up fruit while avoiding hitting its tail or the walls that surround the playing area. Every time the snake eats a piece of fruit, it will grows longer, making the game increasingly difficult and competitive. The user controls the direction of the snake's head (up, down, left, or right), and the snake's body will follow.</p>
+
+<img src="img/snake2.png" height="150" width="250" alt="" id="snake"/>
+
+<p>If you click on the "Hide" button, I will disappear.</p>
+
+<button id="hide">Hide</button>
+<button id="show">Show</button>
+
+    </div>
+
+   <div id="footer">
+   <p>© Sean Smart</p>
+   <a href="https://twitter.com/?lang=en-gb"><img src="img/twitter.png" height="50" width="50" alt="" class="twitter"/></a>
+   <a href="https://en-gb.facebook.com/"><img src="img/facebook.png" height="50" width="50" alt="" class="facebook" /></a>
+   
+   </div>
+   </div>
+
+</body>
+</html>
