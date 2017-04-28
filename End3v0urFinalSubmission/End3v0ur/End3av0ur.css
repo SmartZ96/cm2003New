@@ -1,0 +1,215 @@
+<!doctype css>
+
+#pageheader{
+height:200px;
+width:100%;
+background_color:#FCF7F7;
+}
+
+#thumbnail{
+	top: 50px;
+}
+
+#ytThumbs{
+	height: 400px;
+	width: 600px;
+}
+#header{
+	height:100px;
+	width:100%;
+background-color:#A9A9A9;
+opacity: 0.92;
+margin-top:0px;
+position: fixed;
+}/*the header uses an opacity so its slightly see-through following our design, and a top margin of 0 to stop the main secton pushing it up  */
+
+#ytSearchField{
+	margin-left: 45%;
+	margin-top: 2.3%;
+	position: fixed;
+}
+#search-button{
+	margin-left: 65%;
+	margin-top: 2.3%;
+}
+
+
+.search{
+float: right;
+margin-right:43%;
+padding-top:50px;
+
+}
+
+.logo{
+	float:right;
+}
+
+
+
+#logo{
+	height:100px;
+	width:180px;
+background-color:#A9A9A9;
+float: right;
+position: fixed;
+margin-left: 85%;
+}
+
+#searchbar{
+	height:40px;
+	width:600px;
+	background-color:#A9A9A9;
+	margin-left:35%;/* margins use percentages to stay the same distance on multiple sizes*/
+	margin-top:32.5px;
+	position:absolute;
+	visibility: hidden;
+
+}
+
+	p{
+		font-family:"Trebuchet MS";
+	font-size:17px;}/* chose a font closest to the mock up.*/
+
+#maincontent{
+height:850px;
+width:100%;
+background-color:#FCF7F7;
+background-image:url(Endimages/abstract.jpg);
+}
+
+
+#footer{
+height:100px;
+width:100%;
+background-color:#FFFFFF;
+float: left;
+text-align:center;
+position: relative;
+}
+
+#resident{/* this secton and the sections below make up the controls for the music they all use float left to stay in line.
+	each one has its own height value if necessary so they are the same height.
+	they also use a margin left value to space each one out equally.*/
+	height:90px;
+	width:90px;
+	margin-left:1%;
+	margin-top:5px;
+	background-color:#FFFFFF;
+	float: left;
+}
+
+
+	#tokyotext{
+	height:80px;
+	width:180px;
+	margin-left:3%;
+	margin-top:10px;
+	background-color:#FFFFFF;
+	float: left;}
+
+
+
+		#repeat{
+	height:50px;
+	width:50px;
+	margin-left:3%;
+	margin-top:25px;
+	background-color:#FFFFFF;
+	float: left;}
+
+#repeat:hover{
+	transform:scale(1.1);} /* the buttons have a hover to simulate interactivity, and a hover is used to show this each one uses the same scale value. */
+
+	#skip{
+	height:60px;
+	width:60px;
+	margin-left:3%;
+	margin-top:20px;
+	background-color:#FFFFFF;
+float: left;}
+
+#skip:hover{
+	transform:scale(1.1);}
+
+	#play{
+	height:60px;
+	width:60px;
+	background-color:#FFFFFF;
+	margin-left:3%;
+	margin-top:20px;
+float: left;}
+
+#play:hover{
+	transform:scale(1.1);}
+
+	#skipforward{
+	height:60px;
+	width:60px;
+	background-color:#FFFFFF;
+	margin-left:3%;
+	margin-top:20px;
+float: left;}
+
+
+#skipforward:hover{
+	transform:scale(1.1);}
+
+	#shuffle{
+	height:50px;
+	width:80px;
+	background-color:#FFFFFF;
+		margin-left:3%;
+	margin-top:25px;
+float: left;}
+
+#shuffle:hover{
+	transform:scale(1.1);}
+
+	#progress{
+	height:30px;
+	width:400px;
+	background-color:#FFFFFF;
+		margin-left:6%;
+	margin-top:35px;
+float: left;}
+
+
+	#speaker{
+	height:50px;
+	width:50px;
+	background-color:#FFFFFF;
+	margin-left:5%;
+	margin-top:25px;
+float: left;}
+#speaker:hover{
+	transform:scale(1.1);}
+
+	#volume{
+	height:75px;
+	width:150px;
+	background-color:#FFFFFF;
+	margin-left:3%;
+	margin-top:12.5px;
+float: left;
+}
+
+@media  screen and (max-width: 1620px) and (min-width: 1080px){
+	#maincontent{
+	height:1200px;
+	width:100%;
+	background-color:#FCF7F7;
+	background-image:url(Endimages/abstract.jpg);
+	}
+
+ .content{
+	height:200px;
+ 	width:200px;
+ 	float:left;
+ 	margin-top:5%;
+ 	margin-left:5%;
+
+ }
+
+
+} }
