@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<title>YouTube Radio</title>
+<link href="End3av0ur.css" rel="stylesheet" type="text/css">
+</head>
+
+
+<body>
+
+<header id="pageheader">
+<div id="header">
+
+
+  <div id="logo"><img src="Endimages/YouTubeRadioApp.png" alt="logo" height="90px" width="180px" class="logo"></div>
+  <form onsubmit="ytEmbed.init({'block':'youtubeDivSearch','type':'search','q':document.getElementById('ytSearchField').value,'results': 10,'meta':true}); return false;">
+    <input type="text" id="ytSearchField">  <input type="submit" id=search-button value="  Search   ">
+  </form>
+  <div id="youtubeDivSearch"></div>
+
+  <script src="http://www.yvoschaap.com/ytpage/ytembed.js"></script>
+  <div id="ytThumbs"></div>
+  <script src="search.js"></script>
+
+    </div>
+  </div>
+
+
+</div>
+
+
+
+</header>
+
+
+
+<div id="maincontent">
+
+</div>
+
+
+<div id="footer">
+  <script>
+    ytEmbed.init({'player':'embed','inline':'ytThumbs','key':'AIzaSyABwgL14YbpqytVJxZ_RYWOSgrwnjIwimg','q':'the prodigy','type':'search','results':1,'meta':false,'layout':'thumbnails'});
+  </script>
+  
+  <p> © End3av0ur 2017</p>
+
+
+</div>
+
+
+
+</body>
+</html>
